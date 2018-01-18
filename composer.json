@@ -1,0 +1,20 @@
+{
+    "name": "dev-lusaja/php-command",
+    "description": "PHP command line app",
+    "type": "library",
+    "require": {
+        "league/climate": "3.2.1"
+    },
+    "license": "MTI",
+    "authors": [
+        {
+            "name": "Oscar Sanchez",
+            "email": "janoone52@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Command\\": "App/Command/",
+                    "Base\\": "App/Base/"
+        }
+    }
+}
