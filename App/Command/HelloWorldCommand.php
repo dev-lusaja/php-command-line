@@ -1,30 +1,30 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: dev-lusaja
+ * Date: 19/01/18
+ * Time: 04:27 PM
+ */
+
 namespace Command;
 
-use Command\Base\CommandBase;
-use Command\Base\CommandInterface;
-use Command\Base\Argument;
+use Base\CommandBase;
+use Base\CommandInterface;
 
-class HelloWorldCommand extends CommandBase implements CommandInterface{
+/**
+ * Class HelloWorldCommand
+ * @package Command
+ */
+class HelloWorldCommand extends CommandBase implements CommandInterface {
 
-    /**
-     * HelloWorldCommand constructor.
-     */
+    private $receiver;
+
     public function __construct()
     {
-        parent::__construct();
-        $this->createCommand(
-            (new Argument('message'))
-                ->setPrefix('m')
-                ->setLongPrefix('message')
-                ->setDescription('lalala')
-                ->setDefaultValue('hello world')
-                ->setNoValue(false)
-        );
+        $this->receiver = $this;
     }
 
     public function execute(){
-        $this->out($this->arguments->get('message'));
+        $this->receiver->out('Hello World...!!!');
     }
-
 }

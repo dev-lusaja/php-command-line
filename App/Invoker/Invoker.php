@@ -6,10 +6,14 @@
  * Time: 02:19 PM
  */
 
-namespace Command\Invoker;
+namespace Invoker;
 
-use Command\Base\CommandInterface;
+use Base\CommandInterface;
 
+/**
+ * Class Invoker
+ * @package Invoker
+ */
 class Invoker
 {
     /**
@@ -19,9 +23,12 @@ class Invoker
 
     /**
      * @param CommandInterface $command
+     * @return $this
      */
-    public function setCommand(CommandInterface $command){
+    public function setCommand(CommandInterface $command)
+    {
         $this->command = $command;
+        return $this;
     }
 
     public function run()

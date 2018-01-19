@@ -6,50 +6,53 @@
  * Time: 04:17 PM
  */
 
-namespace Command\Base;
+namespace Base;
 
-
+/**
+ * Class Argument
+ * @package Base
+ */
 class Argument
 {
     /**
      * @var string
      */
-    public $name = '';
+    private $name = '';
 
     /**
      * @var string
      */
-    public $prefix = '';
+    private $prefix = '';
 
     /**
      * @var string
      */
-    public $longPrefix = '';
+    private $longPrefix = '';
 
     /**
      * @var string
      */
-    public $description = '';
+    private $description = '';
 
     /**
      * @var string
      */
-    public $defaultValue = '';
+    private $defaultValue = '';
 
     /**
      * @var bool
      */
-    public $required = false;
+    private $required = false;
 
     /**
      * @var bool
      */
-    public $noValue = true;
+    private $noValue = false;
 
     /**
      * @var string, int, float or bool
      */
-    public $castTo = 'string';
+    private $castTo = 'string';
 
     public function __construct(String $name)
     {

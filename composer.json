@@ -14,7 +14,9 @@
     ],
     "autoload": {
         "psr-4": {"Command\\": "App/Command/",
-                    "Base\\": "App/Base/"
+                    "Base\\": "App/Base/",
+                    "Invoker\\": "App/Invoker/",
+                    "Utils\\": "App/Utils/"
         }
     }
 }

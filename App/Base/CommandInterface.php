@@ -6,10 +6,17 @@
  * Time: 11:47 AM
  */
 
-namespace Command\Base;
+namespace Base;
 
-
+/**
+ * Interface CommandInterface
+ * @package Base
+ */
 interface CommandInterface
 {
+    public function __construct();
+
+    public function __invoke();
+
     public function execute();
 }

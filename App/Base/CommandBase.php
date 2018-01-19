@@ -6,16 +6,37 @@
  * Time: 11:47 AM
  */
 
-namespace Command\Base;
+namespace Base;
 
 use League\CLImate\CLImate;
 
-abstract class CommandBase extends CLImate{
+/**
+ * Class CommandBase
+ * @package Base
+ */
+class CommandBase extends CLImate{
+
+    /**
+     * @param Argument[] ...$arrayArguments
+     */
+    public $arrayArguments = [];
+
+    /**
+     * CommandBase constructor.
+     */
+    public function __invoke()
+    {
+        parent::__construct();
+        $this->setArguments($this->arrayArguments);
+        $this->parseArguments();
+        $this->isHelp();
+    }
 
     /**
      * @param Argument[] ...$args
      */
-    protected function createCommand(Argument ...$args){
+    protected function setArguments(array $args)
+    {
         $arrayArgs = (new Argument('help'))->setPrefix('h')->setLongPrefix('help')->setDescription('Prints a usage statement')->setNoValue(true)->toArray();
         /**
          * @var $arg Argument
@@ -24,11 +45,15 @@ abstract class CommandBase extends CLImate{
             $arrayArgs = array_merge($arrayArgs, $arg->toArray());
         }
         $this->arguments->add($arrayArgs);
-        $this->arguments->parse();
-        $this->isHelp();
     }
 
-    private function isHelp(){
+    protected function parseArguments()
+    {
+        $this->arguments->parse();
+    }
+
+    protected function isHelp()
+    {
         if ($this->arguments->defined('help')){
             $this->usage();
             die();
