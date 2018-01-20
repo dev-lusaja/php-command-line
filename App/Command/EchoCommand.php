@@ -11,6 +11,8 @@ namespace Command;
 use Base\CommandBase;
 use Base\Argument;
 use Base\CommandInterface;
+use Receiver\CloudWatchReceiver;
+use Receiver\Factory\ReceiverFactory;
 
 /**
  * Class EchoCommand
@@ -22,7 +24,7 @@ class EchoCommand extends CommandBase implements CommandInterface {
 
     public function __construct()
     {
-        $this->receiver = $this;
+        $this->receiver = ReceiverFactory::getReceiver(CloudWatchReceiver::class);
         $this->arrayArguments = [
             (new Argument('message'))
                 ->setPrefix('m')

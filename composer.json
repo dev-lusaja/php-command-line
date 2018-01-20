@@ -16,7 +16,8 @@
         "psr-4": {"Command\\": "App/Command/",
                     "Base\\": "App/Base/",
                     "Invoker\\": "App/Invoker/",
-                    "Utils\\": "App/Utils/"
+                    "Utils\\": "App/Utils/",
+                    "Receiver\\": "App/Receiver/"
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Command;
 
 use Base\CommandBase;
 use Base\CommandInterface;
+use Receiver\Factory\ReceiverFactory;
 
 /**
  * Class HelloWorldCommand
@@ -21,7 +22,7 @@ class HelloWorldCommand extends CommandBase implements CommandInterface {
 
     public function __construct()
     {
-        $this->receiver = $this;
+        $this->receiver = ReceiverFactory::getReceiver();
     }
 
     public function execute(){

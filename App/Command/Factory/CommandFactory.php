@@ -8,7 +8,6 @@
 
 namespace Command\Factory;
 
-
 /**
  * Class CommandFactory
  * @package Command\Factory
@@ -42,10 +41,14 @@ class CommandFactory
             return $Object;
         } else {
             $commands = glob('App/Command/*Command.php');
-            echo "Command list:" . PHP_EOL;
+            $climate = new \League\CLImate\CLImate;
+            $climate->draw('404');
+            $data = [];
+            $climate->red()->out('Command not found:');
             foreach ($commands as $command){
-                echo basename($command, 'Command.php') . PHP_EOL;
+                $data[] = ['Available Commands' => basename($command, 'Command.php')];
             }
+            $climate->table($data);
             die();
         }
     }

@@ -33,7 +33,8 @@ class CommandBase extends CLImate{
     }
 
     /**
-     * @param Argument[] ...$args
+     * @param array $args
+     * @throws \Exception
      */
     protected function setArguments(array $args)
     {
@@ -46,6 +47,7 @@ class CommandBase extends CLImate{
         }
         $this->arguments->add($arrayArgs);
     }
+
 
     protected function parseArguments()
     {
