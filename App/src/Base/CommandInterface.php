@@ -6,7 +6,7 @@
  * Time: 11:47 AM
  */
 
-namespace Base;
+namespace App\Base;
 
 /**
  * Interface CommandInterface

@@ -6,7 +6,7 @@
  * Time: 04:17 PM
  */
 
-namespace Base;
+namespace App\Base;
 
 /**
  * Class Argument

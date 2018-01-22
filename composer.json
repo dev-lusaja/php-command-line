@@ -13,11 +13,11 @@
         }
     ],
     "autoload": {
-        "psr-4": {"Command\\": "App/Command/",
-                    "Base\\": "App/Base/",
-                    "Invoker\\": "App/Invoker/",
-                    "Utils\\": "App/Utils/",
-                    "Receiver\\": "App/Receiver/"
+        "psr-4": {"App\\Command\\": "App/src/Command/",
+                    "App\\Base\\": "App/src/Base/",
+                    "App\\Invoker\\": "App/src/Invoker/",
+                    "App\\Utils\\": "App/src/Utils/",
+                    "App\\Receiver\\": "App/src/Receiver/"
         }
     }
 }

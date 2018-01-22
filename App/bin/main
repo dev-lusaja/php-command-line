@@ -1,3 +1,5 @@
+#!/usr/bin/env php
+
 <?php
 /**
  * Created by PhpStorm.
@@ -6,16 +8,15 @@
  * Time: 04:27 PM
  */
 
-chdir(dirname(__DIR__));
 require_once('vendor/autoload.php');
 
-use Command\Factory\CommandFactory;
-use Utils\ErrorHandler;
+use App\Command\Factory\CommandFactory;
+use App\Utils\ErrorHandler;
 
 try{
     ErrorHandler::setErrorHandler();
     $command = CommandFactory::getCommand($argv[1]);
-    (new Invoker\Invoker())
+    (new App\Invoker\Invoker())
         ->setCommand($command)
         ->run();
 } catch (\Exception $e){

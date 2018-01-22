@@ -6,11 +6,11 @@
  * Time: 04:27 PM
  */
 
-namespace Command;
+namespace App\Command;
 
-use Base\CommandBase;
-use Base\CommandInterface;
-use Receiver\Factory\ReceiverFactory;
+use App\Base\CommandBase;
+use App\Base\CommandInterface;
+use App\Receiver\Factory\ReceiverFactory;
 
 /**
  * Class HelloWorldCommand

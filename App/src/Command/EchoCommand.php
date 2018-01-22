@@ -6,13 +6,13 @@
  * Time: 04:27 PM
  */
 
-namespace Command;
+namespace App\Command;
 
-use Base\CommandBase;
-use Base\Argument;
-use Base\CommandInterface;
-use Receiver\CloudWatchReceiver;
-use Receiver\Factory\ReceiverFactory;
+use App\Base\CommandBase;
+use App\Base\Argument;
+use App\Base\CommandInterface;
+use App\Receiver\CloudWatchReceiver;
+use App\Receiver\Factory\ReceiverFactory;
 
 /**
  * Class EchoCommand
@@ -35,6 +35,14 @@ class EchoCommand extends CommandBase implements CommandInterface {
     }
 
     public function execute(){
-        $this->receiver->out($this->arguments->get('message'));
+        try{
+            if($this->arguments->defined('message')){
+                $this->receiver->out($this->arguments->get('message'));
+            } else {
+                throw new \Exception('Message not defined for Echo command');
+            }
+        } catch(\Exception $e){
+            throw new \Exception($e->getMessage());
+        }
     }
 }

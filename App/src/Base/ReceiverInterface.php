@@ -6,7 +6,7 @@
  * Time: 11:44 PM
  */
 
-namespace Base;
+namespace App\Base;
 
 
 interface ReceiverInterface

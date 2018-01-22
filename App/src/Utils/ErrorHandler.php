@@ -6,7 +6,7 @@
  * Time: 03:15 PM
  */
 
-namespace Utils;
+namespace App\Utils;
 
 class ErrorHandler
 {

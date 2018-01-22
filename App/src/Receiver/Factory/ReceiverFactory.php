@@ -6,10 +6,10 @@
  * Time: 12:02 AM
  */
 
-namespace Receiver\Factory;
+namespace App\Receiver\Factory;
 
 
-use Base\ReceiverBase;
+use App\Base\ReceiverBase;
 
 class ReceiverFactory
 {

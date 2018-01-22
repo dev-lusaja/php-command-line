@@ -1,0 +1,10 @@
+{
+  "directories": [
+    "App",
+    "vendor"
+  ],
+  "main": "App/bin/main",
+  "output": "command.phar",
+  "stub": true,
+  "chmod": "755"
+}

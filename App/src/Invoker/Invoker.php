@@ -6,9 +6,9 @@
  * Time: 02:19 PM
  */
 
-namespace Invoker;
+namespace App\Invoker;
 
-use Base\CommandInterface;
+use App\Base\CommandInterface;
 
 /**
  * Class Invoker
